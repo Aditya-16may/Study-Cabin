@@ -42,8 +42,9 @@ export default function Body() {
 
         <div className="main-body">
           <div className="body">
-            <div id="Dashboard">
+            <div id="Dashboard" className="page-setter">
               <header>Dashboard</header>
+              <p style={{fontSize:"1.5rem", marginTop:"1.2rem"}}>Rooms available for bookings with respected time-slots..</p>
               <div className="alpha">
                 <h2>Upcoming Booking</h2>
                 <div className="head">
@@ -60,10 +61,10 @@ export default function Body() {
                   <p>2:30 PM</p>
                   <p>3:30 PM</p>
                   <div className="btn">
-                    <p onClick={() => selection("A")}>
+                    <p onClick={() => selection("A")} className={select === "A" ? "Reject" : "Select"}>
                       {select === "A" ? "Reject" : "Select"}
                     </p>
-                    <p>{select === "A" ? "SELECTED" : "REJECTED"}</p>
+                    <p className={select === "A" ? "SELECTED" : "REJECTED"}>{select === "A" ? "SELECTED" : "REJECTED"}</p>
                   </div>
                 </div>
                 <hr />
@@ -73,10 +74,10 @@ export default function Body() {
                   <p>8:30 AM</p>
                   <p>9:30 AM</p>
                   <div className="btn">
-                    <p onClick={() => selection("B")}>
+                    <p onClick={() => selection("B")} className={select === "B" ? "Reject" : "Select"}>
                       {select === "B" ? "Reject" : "Select"}
                     </p>
-                    <p>{select === "B" ? "SELECTED" : "REJECTED"}</p>
+                    <p className={select === "B" ? "SELECTED" : "REJECTED"}>{select === "B" ? "SELECTED" : "REJECTED"}</p>
                   </div>
                 </div>
                 <hr />
@@ -86,24 +87,24 @@ export default function Body() {
                   <p>9:30 AM</p>
                   <p>10:30 AM</p>
                   <div className="btn">
-                    <p onClick={() => selection("C")}>
+                    <p onClick={() => selection("C")}className={select === "C" ? "Reject" : "Select"}>
                       {select === "C" ? "Reject" : "Select"}
                     </p>
-                    <p>{select === "C" ? "SELECTED" : "REJECTED"}</p>
+                    <p className={select === "C" ? "SELECTED" : "REJECTED"}>{select === "C" ? "SELECTED" : "REJECTED"}</p>
                   </div>
                 </div>
                 <hr />
               </div>
             </div>
-            <div id="Rooms">
+            <div id="Rooms" className="page-setter">
               <div className="adjustor">
                 <header>Rooms</header>
               </div>
-              <p>Find Meeting Room for your taste and needs.</p>
+              <p style={{fontSize:"1.5rem"}}>Find Meeting Room for your taste and needs.</p>
 
               <div className="prnt">
                 <div className="R">
-                  <h3>Galaxy</h3>
+                  <h3>Neverland Ranch</h3>
                   <img src={img} alt="room" />
 
                   <h4>Description</h4>
@@ -193,8 +194,9 @@ export default function Body() {
                 </div>
               </div>
             </div>
-            <div id="Bookings" >
+            <div id="Bookings" className="page-setter">
                 <header>Bookings</header>
+                <p style={{fontSize:"1.5rem", marginTop:"1.2rem"}}>Your recent bookings with respected time-slots..</p>
                 <div class="recent-bookings">
                   <div class="top-bar">
                     <h2>Recent Bookings</h2>
@@ -240,8 +242,9 @@ export default function Body() {
                   </div>
                 </div>
             </div>
-            <div id="Reports">
+            <div id="Reports" className="page-setter">
               <header>Report Room</header>
+              <p style={{fontSize:"1.5rem", marginTop:"1.2rem"}}>We are apologetic for any inconveniece faced by you. Kindly specify the issue regarding the room (if any)..</p>
               <button className="open-report-btn" onClick={() => setShowReport(true)}>
                 Open Report Form
               </button>
